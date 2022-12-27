@@ -5,7 +5,7 @@ Basic offerings are compute power and storage
 computer power - how much processing can be done
 storage - volume of data you can store
 
-Shared responsibility model - 
+(Cloud) Shared responsibility model - 
 cloud provider - responsible for physical security, power, cooling, and network connectivity
 - because customer is not colo with provider
 
@@ -16,6 +16,30 @@ shared/depends on situ
 ex:
 - cloud SQL - cloud provider resp. for maintaining actual DB - but customer resp. for data
 - vm with SQL on it - customer responsible for all including patching, updates, data/info
+
+
+See shared-responsibiilty.png
+
+You’ll always be responsible for:
+The information and data stored in the cloud
+Devices that are allowed to connect to your cloud (cell phones, computers, and so on)
+The accounts and identities of the people, services, and devices within your organization
+
+The cloud provider is always responsible for:
+The physical datacenter
+The physical network
+The physical hosts
+
+Your service model will determine responsibility for things like:
+Operating systems
+Network controls
+Applications
+Identity and infrastructure
+
+
+
+On Premise model
+- customer responsible for everything
 
 
 ### Describe the benefits of using cloud services
