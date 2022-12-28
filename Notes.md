@@ -93,11 +93,12 @@ CapEx - capital expenditure
 OpEx - operational expenditure
 - spend on svcs or products over time
 
-Cloud computing is OpEx due to consumption-based model
+Consumption based model info
+- Cloud computing is OpEx due to consumption-based model
+- 
+- not paying for physical infrastructure, electricity, security, or any other datacenter costs
 
-not paying for physical infrastructure, electricity, security, or any other datacenter costs
-
-you are paying for IT resources used
+- you are paying for IT resources used
 
 consumption based model benefits
 - no upfront costs
