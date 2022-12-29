@@ -182,8 +182,64 @@ az vm extension set \
   - allows multiple concurrent users on a single VM 
 
 ### Describe Azure Containers
+- What are containers?
+  - a virtualization environment
+  - allows multiple containers on a single physical or virutal host
+  - can be scaled out or stopped dynamically
+  - Docker supported / one of most popular
+
+- Compare virtual machines to containers
+  - VMs
+    - virtualize hardware
+    - control
+    - abstraction layer for os, cpu, ram, storage
+    - downsides: 
+      - 1 OS at a time (multiple runtimes require multiple OS potentially)
+      - slow to come up/down
+    
+  - containers
+    - virtualize OS
+    - portability, performance
+    - smaller unit deployed to a container host
+    - host provides standardized area to run containers side by side 
+    - light weight, more efficient than full VM    
+    - containerized apps smaller in size 
+    - can make dev env like prod env
+    - can orchestrate containers
+    
+- Azure Container Intances
+  - offer fastest/simplest way to run container w/o VMs  
+  - PaaS
+
+- Use containers in your solutions
+  - often used with microservice architecture
+  - could scale diff parts of app such as backend vs front end vs storage independently
+
 ### Describe Azure Functions
+- Event-driven, serverless compute option not needing VM or containers
+
+- Serverless computing in Azure
+  - focus on working on application, not infrastructure/server mgmt tasks
+  - benefits
+    - no infra mgmt
+    - scalability (scale from nothing to 10s of thousands)
+    - only pay for use (event driven)
+
+- Benefits of Azure Functions
+  - only in response to an event (often REST request), timer, message from another Az svc
+  - stateless (default) or stateful 
+    - stateless - behave as if restarted every time 
+    - stateful (Durable Functions) - context is passed through the function to track prior activity
+  - can be used to run any type of code
+
 ### Describe application hosting options
+- Azure App Service
+  - Types of app services
+  - Web apps
+  - API apps
+  - WebJobs
+  - Mobile apps
+  
 ### Describe Azure Virtual Networking
 ### Exercise - Configure network access
 ### Describe Azure Virtual Private Networks
