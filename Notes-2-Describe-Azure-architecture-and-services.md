@@ -109,8 +109,7 @@ Just played around in azure sandbox CLI
   - 10,000 mgmt groups can be supported in a single directory
   - mgmt group tree can support up to six levels of depth (not including root or subscription level)
   - each mgmt group and subscription can only have one parent
-  - 
-
+  
 
 ### Exercise - Create an Azure resource
 
@@ -118,8 +117,70 @@ Just played around in azure sandbox CLI
 ## 2. Describe Azure copute and networking services
 
 ### Describe Azure Virtual Machines
+- Provides IaaS
+- Control everything
+- Maintain everything
+- Can deploy templated VM's
+
+- Scale VMs in Azure
+  - Virtual machine scale sets
+    - Azure helps automate work of creating and managing sets of identical load balanced VMs
+    - handles the utilization monitoring for scaling for you
+  
+  - Virtual machine availability sets
+    - tool that ensures VMs stagger updates and have varied power and network connectivity 
+    - prevents loss of all VMs with a single network or power failure
+    - groupings
+      - Update domain 
+        - groups VMs that can be rebooted at the same time
+        - all of machines in group will be updated at same time 
+        - will be given 30 min to recover before next update domain starts
+      - Fault domain
+        - gruops VMs by common power source and network switch  
+        - by default, split by up to three fault domains
+        - no additional cost for configuring - only pay for VMs
+- Examples of when to use VMs
+  - testing and development
+  - when running apps in the cloud
+  - when extending datacenter to the cloud
+  - during disaster recovery
+
+- Move to the cloud with VMs
+  - lift and shift
+
+- VM Resources
+  - Things you can choose
+    - size (purpose, number of cores, amt of RAM)
+    - storage disks (HDD, SSD, etc)
+    - networking (Vnet, pub IP address, port config)
+
+
 ### Exercise - Create an Azure Virtual Machine
+az vm create \
+  --resource-group learn-b7014ac3-9ddd-4676-a0d3-2f00b4a4c01a \
+  --name my-vm \
+  --image UbuntuLTS \
+  --admin-username azureuser \
+  --generate-ssh-keys
+
+az vm extension set \
+  --resource-group learn-b7014ac3-9ddd-4676-a0d3-2f00b4a4c01a \
+  --vm-name my-vm \
+  --name customScript \
+  --publisher Microsoft.Azure.Extensions \
+  --version 2.1 \
+  --settings '{"fileUris":["https://raw.githubusercontent.com/MicrosoftDocs/mslearn-welcome-to-azure/master/configure-nginx.sh"]}' \
+  --protected-settings '{"commandToExecute": "./configure-nginx.sh"}'
+
+
 ### Describe Azure Virtual Desktop
+- Azure's VDI solution
+- Enhance security
+  - provides centralized security management with AAD, MFA, Role-based access controls (RBACs)
+  - data and apps are separated from local hardware (confidential info risk low)
+- Multi-session Windows 10 or Windows 11 deployment
+  - allows multiple concurrent users on a single VM 
+
 ### Describe Azure Containers
 ### Describe Azure Functions
 ### Describe application hosting options
