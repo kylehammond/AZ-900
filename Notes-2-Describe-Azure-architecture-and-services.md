@@ -79,6 +79,37 @@ Just played around in azure sandbox CLI
   - China East, China North, etc - special partnership between MS and 21Vianet (maintains datacenters)
 
 ### Describe Azure management infrastructure 
+- Resources, resource groups, subscriptions, accounts
+  - see resource-group.png
+  - Resource Groups are groupings of resources and is required
+  - single resource can belong to ONLY one RG
+  - groups can NOT be nested
+  - applying an action or deleting a group applies to all resources in group
+
+- Azure subscriptions
+  - see subscriptions.png
+  - unit of management, billing, and scale
+  - links to an azure account
+  - account required to have one sub, but can have multiple
+  - types of subscription boundries
+    - billing - separate billing reports and invoices
+    - access countrol - access management policies 
+  - Create additional Azure subscriptions
+    - for environments/compliance
+    - org structure
+    - billing
+
+- Azure management groups
+  - provide a level of scope above subscriptions
+  - allows you to apply governance - "all VMs must be in US West Region"
+  - you can apply Azure role-based access control (Azure RBAC) - is applied to all subgroups
+  - Management groups > Subscriptions > Resource groups > resources
+  - see management-groups-subscriptions.png
+  
+  - 10,000 mgmt groups can be supported in a single directory
+  - mgmt group tree can support up to six levels of depth (not including root or subscription level)
+  - each mgmt group and subscription can only have one parent
+  - 
 
 
 ### Exercise - Create an Azure resource
